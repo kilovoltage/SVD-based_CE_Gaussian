@@ -1,5 +1,7 @@
 SVD-based Causal Emergence for Gaussian Iterative Systems
 
+![image](https://github.com/user-attachments/assets/34640c3d-f099-4cfd-a6f2-82dd66de50be)
+
 1.Delta_Gamma.ipynb
 
 Suppose $x_{t+1}=a_0+Ax_t+\varepsilon_t,\varepsilon_t\sim\mathcal{N}(0,\Sigma)$ as the transitional probability from $x_t\in\mathcal{R}^n$ to $x_{t+1}\in\mathcal{R}^n$ in GIS, its $\alpha$-ordered singular value spectrum is:
@@ -28,6 +30,8 @@ SIR trained by the original neural network. Most systems in reality are unable t
 To generate the time series data of the micro-state, we adopt the same method in our previous work of NIS+\cite{Yang2024}. We generate data by converting $\mathrm{d}S/\mathrm{d}t,\mathrm{d}I/\mathrm{d}t$ into $\Delta S/\Delta t,\Delta I/\Delta t$ as $\Delta t = 0.01$ and $(S_{t+\Delta t},I_{t+\Delta t})\approx(S_{t},I_{t})+(\mathrm{d}S_t/\mathrm{d}t,\mathrm{d}I_t/\mathrm{d}t)\Delta t$. Then we duplicate the macro-state $(S_t,I_t)$ as shown in Fig.\ref{fig:SIR}c and added Gaussian random noise to form the micro-state $x_t$
 
 4.SIR_Cov_example.ipynb
+
+![image](https://github.com/user-attachments/assets/ea43a254-7128-414a-9b74-99539c585e2a)
 
 By feeding the micro-state data into a forward neural network (NN) called \textbf{Covariance Learner Network}, we can use this model to approximate the micro-dynamics of the SIR model. The model we trained has the following structure:
 
