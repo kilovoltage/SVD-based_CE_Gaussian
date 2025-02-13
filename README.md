@@ -18,10 +18,14 @@ We can use **gamma** to calculate the approximate reversibility index after remo
 
 **clear_causal_emergence** and **vague_causal_emergence** can help us calculate SVD-based CE directly, we only need to know the gradient **A** and covariance **Sigma** of the system's dynamics.
 
+![image](https://github.com/user-attachments/assets/101d3782-b64b-48eb-a473-e23caf767254)
+
 The example contains 4 variables, in which the first two variables $x_1,x_2$ follow the Malthusian growth model \cite{Galor2000} with different growth rates of 0.2 and 0.05. To study CE, we define the other two variables $x_3,x_4$ as the copies of the first two variables shown as Fig.\ref{fig:Known_model}a, thus, they are redundant dimensions. If $x=(x_1,x_2,x_3,x_4)$, the evolution of $x$ is a GIS $x_{t+1}=a_0+Ax_t+\varepsilon_t, \varepsilon_t\sim\mathcal{N}(0,\sigma^2 I_4)$ as $x_t,x_{t+1}\in\mathcal{R}^{4}$, $\sigma^2=0.1$, $a_0=0$, and
 $A = \begin{matrix}1.2 & 0 &0 &0 \\0 & 1.05 &0 &0 \\1.2 & 0 &0 &0 \\ 0 & 1.05 &0 &0  \end{matrix}$.
 
 ## 2.Gaussian_Markov.ipynb
+
+![image](https://github.com/user-attachments/assets/6b8d5624-97af-42d3-859f-fecf2816a2c5)
 
 In addition to directly copying, the system also has information redundancy if there are several dimensions with strong correlations. In this situation, CE will also be evident. A classic case here is the Markov Gaussian system , which can be seen as a Markov chain in a continuous state space. The example systems are characterized by the dynamics $x_{t+1} =Ax_t+\varepsilon_t$, where $x_t$ contains $n$ variables, $A=(a_{ij})_{n\times n}$ is the connectivity matrix and $\varepsilon_t\sim\mathcal{N}(0,I_n)$. $0\leq a_{ij}\leq 1$ reflects whether there is a connection between $i$ and $j$ and the strength of the connection. In this way, the system's state fluctuates within a stable region, and the Markovian Gaussian system can model EEG data to study consciousness-related issues. The relevant data can be transformed into a 0-1 time series and studied using TPM, but the information is lost.
 
