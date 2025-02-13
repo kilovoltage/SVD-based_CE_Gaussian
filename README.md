@@ -1,8 +1,8 @@
-## SVD-based Causal Emergence for Gaussian Iterative Systems
+# SVD-based Causal Emergence for Gaussian Iterative Systems
 
 ![image](https://github.com/user-attachments/assets/34640c3d-f099-4cfd-a6f2-82dd66de50be)
 
-# 1.Delta_Gamma.ipynb
+## 1.Delta_Gamma.ipynb
 
 Suppose $x_{t+1}=a_0+Ax_t+\varepsilon_t,\varepsilon_t\sim\mathcal{N}(0,\Sigma)$ as the transitional probability from $x_t\in\mathcal{R}^n$ to $x_{t+1}\in\mathcal{R}^n$ in GIS, its $\alpha$-ordered singular value spectrum is:
 $\zeta^\alpha(\omega)=\{{\rm det}(\Sigma)^{\frac{1}{2}}{\rm pdet}(A^T\Sigma^{-1} A)^{\frac{1}{2}}\}^{-\frac{\alpha}{2}}\exp\{-\frac{\alpha}{2}\left(\omega^T(A^T\Sigma^{-1}A)^{\dagger}\omega\right)\}$
@@ -17,13 +17,13 @@ We can use **gamma** to calculate the approximate reversibility index after remo
 The example contains 4 variables, in which the first two variables $x_1,x_2$ follow the Malthusian growth model \cite{Galor2000} with different growth rates of 0.2 and 0.05. To study CE, we define the other two variables $x_3,x_4$ as the copies of the first two variables shown as Fig.\ref{fig:Known_model}a, thus, they are redundant dimensions. If $x=(x_1,x_2,x_3,x_4)$, the evolution of $x$ is a GIS $x_{t+1}=a_0+Ax_t+\varepsilon_t, \varepsilon_t\sim\mathcal{N}(0,\sigma^2 I_4)$ as $x_t,x_{t+1}\in\mathcal{R}^{4}$, $\sigma^2=0.1$, $a_0=0$, and
 $A = \begin{matrix}1.2 & 0 &0 &0 \\0 & 1.05 &0 &0 \\1.2 & 0 &0 &0 \\ 0 & 1.05 &0 &0  \end{matrix}$.
 
-# 2.Gaussian_Markov.ipynb
+## 2.Gaussian_Markov.ipynb
 
 In addition to directly copying, the system also has information redundancy if there are several dimensions with strong correlations. In this situation, CE will also be evident. A classic case here is the Markov Gaussian system , which can be seen as a Markov chain in a continuous state space. The example systems are characterized by the dynamics $x_{t+1} =Ax_t+\varepsilon_t$, where $x_t$ contains $n$ variables, $A=(a_{ij})_{n\times n}$ is the connectivity matrix and $\varepsilon_t\sim\mathcal{N}(0,I_n)$. $0\leq a_{ij}\leq 1$ reflects whether there is a connection between $i$ and $j$ and the strength of the connection. In this way, the system's state fluctuates within a stable region, and the Markovian Gaussian system can model EEG data to study consciousness-related issues. The relevant data can be transformed into a 0-1 time series and studied using TPM, but the information is lost.
 
 We considered a system with $n=8$ and connectivity as shown in Figure. Connection strengths between the first seven nodes are $1/7$ and the eighth node is a self-ring with a connection strength of 1. To avoid $\gamma_\alpha=0$ caused by singular values all being 1, we can add some perturbations to $A$.
 
-# 3.SIR_Example.ipynb
+## 3.SIR_Example.ipynb
 
 ![image](https://github.com/user-attachments/assets/23b01463-28fa-4e1b-bda1-223b10a10396)
 
@@ -31,7 +31,7 @@ SIR trained by the original neural network. Most systems in reality are unable t
 
 To generate the time series data of the micro-state, we adopt the same method in our previous work of NIS+\cite{Yang2024}. We generate data by converting $\mathrm{d}S/\mathrm{d}t,\mathrm{d}I/\mathrm{d}t$ into $\Delta S/\Delta t,\Delta I/\Delta t$ as $\Delta t = 0.01$ and $(S_{t+\Delta t},I_{t+\Delta t})\approx(S_{t},I_{t})+(\mathrm{d}S_t/\mathrm{d}t,\mathrm{d}I_t/\mathrm{d}t)\Delta t$. Then we duplicate the macro-state $(S_t,I_t)$ as shown in Fig.\ref{fig:SIR}c and added Gaussian random noise to form the micro-state $x_t$
 
-# 4.SIR_Cov_example.ipynb
+## 4.SIR_Cov_example.ipynb
 
 ![image](https://github.com/user-attachments/assets/ea43a254-7128-414a-9b74-99539c585e2a)
 
