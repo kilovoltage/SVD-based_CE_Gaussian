@@ -20,7 +20,7 @@ We can use **gamma** to calculate the approximate reversibility index after remo
 
 if $r=r(A^T\Sigma^{-1} A)<n$ then *clear causal emergence* occurs in this system. The degree of clear CE is
 ```math
-\Delta\Gamma_\alpha(0)\equiv\hat{\gamma}_alpha(0)-\hat\gamma_\alpha=\frac{1}{r}(\frac{1}{2}-\frac{\alpha}{4})\sum_{i=1}^{r}\ln s_i+\frac{\alpha}{4r}\sum_{i=1}^{r}\ln\kappa_i-\frac{1}{n}(\frac{1}{2}-\frac{\alpha}{4})\sum_{i=1}^{r}\ln s_i-\frac{\alpha}{4n}\sum_{i=1}^{n}\ln\kappa_i
+\Delta\Gamma_\alpha(0)\equiv\hat{\gamma}_\alpha(0)-\hat\gamma_\alpha=\frac{1}{r}(\frac{1}{2}-\frac{\alpha}{4})\sum_{i=1}^{r}\ln s_i+\frac{\alpha}{4r}\sum_{i=1}^{r}\ln\kappa_i-\frac{1}{n}(\frac{1}{2}-\frac{\alpha}{4})\sum_{i=1}^{r}\ln s_i-\frac{\alpha}{4n}\sum_{i=1}^{n}\ln\kappa_i
 ```
 
 For a given random  $p(x_{t+1}|x_t)=\mathcal{N}(Ax_t+a_0,\Sigma)$, suppose the singular values of $A^T\Sigma^{-1}A$ are $s_1\geq s_2\geq\cdots\geq s_{r}\geq 0$. For a given real value $\epsilon\in [0,s_1]$ as a lower bound for singular values, if there is an integer $i\in[1,r]$ such that $s_i\equiv s_i(A^T\Sigma^{-1}A)>\epsilon$, then there is \textbf{vague causal emergence} with the level of vagueness $\epsilon$ occurred in the system. The same applies to handling $\kappa_i,i=1,\dots,n,$ of $\Sigma^{-1}$. We define *global effective rank* $r_\epsilon\equiv\min\lbrace r_\epsilon(A^T\Sigma^{-1} A),r_\epsilon(\Sigma^{-1})\rbrace$ as $r_{\epsilon}(A^T\Sigma^{-1} A)=\max\lbrace i|s_{i}>\epsilon\rbrace$ and $r_\epsilon(\Sigma^{-1})=\max\lbrace i|k_{i}>\epsilon\rbrace$. The degree of vague CE is:
